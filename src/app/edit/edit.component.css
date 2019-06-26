@@ -1,0 +1,7 @@
+.input.ng-invalid.ng-touched {
+    border: 1.5px solid hsl(348, 100%, 61%);
+}
+.img {
+    width: 80vw!important;
+    height: auto!important;
+}

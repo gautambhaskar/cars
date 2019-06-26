@@ -1,0 +1,38 @@
+<div style="height: 5vw"></div>
+<section class="section">
+    <div *ngIf="isLoading" style="text-align: center!important;">
+        <app-spinner>Loading...</app-spinner>
+    </div>
+    <div *ngIf='!isLoading'>
+        <div *ngIf='errorMessage' class="notification is-danger">
+            <button class="delete" (click)='clearError()'></button>
+            {{ errorMessage }}
+        </div>
+        <div *ngIf="!loginMode" class="container">
+            <h1 class="title">Sign Up</h1>
+            <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+                <p>Email: <input class="input" ngModel name="email" type="text" required email></p>
+                <div style="height: 2vh"></div>
+                <p>Password: <input class="input" ngModel name="password" type="password" required minlength="6"></p>
+                <div style="height: 2vh"></div>
+                <div class="buttons has-addons">
+                    <button class="button is-info" style="color: white;" type="submit" [disabled]="!authForm.valid">Sign Up</button>
+                    <button *ngIf="!loginMode" type="button" class="button is-primary" (click)="switchMode()">Switch to Login</button>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="loginMode" class="container">
+            <h1 class="title">Login</h1>
+            <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+                <p>Email: <input class="input" ngModel name="email" type="text" required email></p>
+                <div style="height: 2vh"></div>
+                <p>Password: <input class="input" ngModel name="password" type="password" required minlength="6"></p>
+                <div style="height: 2vh"></div>
+            <div class="buttons has-addons">
+                <button class="button is-info" style="color: white;" type="submit" [disabled]="!authForm.valid">Log In</button>
+                <button *ngIf="loginMode" type="button" class="button is-primary" (click)="switchMode()">Switch to Sign Up</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</section>

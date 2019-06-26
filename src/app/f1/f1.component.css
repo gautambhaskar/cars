@@ -1,0 +1,33 @@
+.box:hover {
+    background-color: hsl(0, 0%, 96%);
+}
+.img {
+    width: 70vw;
+    height: auto;
+}
+.delete {
+    float: right!important;
+}
+.delete:hover {
+    background-color: brown!important;
+}
+.fixedbox {
+    position: fixed;
+    height: 30vh;
+    width: 30vw;
+    margin-left: 25vw;
+    z-index: 50;
+    opacity: 1!important;
+}
+.backdrop1 {
+    position: fixed;
+    z-index: 40;
+    margin-top: -100vh;
+    padding-left: 120vw;
+    padding-top: 100vh;
+    margin-left: -100vw;
+    height: 500vh;
+    width: 500vw;
+    background-color: black;
+    opacity: 0.6;
+}

@@ -1,0 +1,13 @@
+<nav class="navbar is-fixed-top has-background-light">
+  <div class="navbar-brand">
+    <a class="navbar-item title is-2 has-text-info" routerLink="">Ribbon</a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <a class="navbar-item" routerLink="cars" *ngIf="isAuthenticated">Cars</a>
+      <a class="navbar-item" routerLink="f1" *ngIf="isAuthenticated">Formula 1</a>
+      <a class="navbar-item" *ngIf="isAuthenticated" (click)="onLogout()">Logout</a>
+      <a class="navbar-item" routerLink="auth" *ngIf="!isAuthenticated">Login</a>
+    </div>
+  </div>
+</nav>

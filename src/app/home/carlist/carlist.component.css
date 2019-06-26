@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+.container {
+    width: 90%;
+    margin-left: 5%;
+}
+.box:hover {
+    background-color: hsl(204, 86%, 53%)!important; 
+}
+.box {
+    background-color: hsl(217, 71%, 53%)!important;
+}

@@ -1,0 +1,41 @@
+<div class="container" style="height: 20vh;"></div>
+<div class="container">
+<h1 class="title is-1" style="text-align: center;">Formula 1</h1>
+<p class="has-text-dark" style="text-align: center;">I love Formula 1!</p>
+<p class="has-text-dark" style="text-align: left;">Here are my favorite drivers...</p>
+<div class="buttons has-addons">
+  <button class="button is-success is-outlined" (click)="onFetch()">Fetch Drivers</button>
+  <button class="button is-info is-outlined" (click)="onAdd()">Add Drivers</button>
+</div>
+<div style='text-align: center' *ngIf='isLoading'>
+  <div style='height: 50px;'></div>
+  <app-spinner></app-spinner>
+</div>
+<ul *ngIf='!isLoading'>
+    <div class="backdrop1" *ngIf='query'></div>
+    <div *ngIf='query' class="notification is-danger fixedbox" style='text-align: center;'>
+        {{ message }}
+        <div style='height: 5vh;'></div>
+        <div class="buttons" style='margin-left: 2vw;'> 
+          <button class="button is-danger is-outlined is-inverted" (click)='closeMessage(true)'>Yes</button>
+          <button class="button is-danger is-outlined is-inverted" (click)='closeMessage(false)'>No</button>
+        </div>
+           </div>
+  <li *ngFor = "let driver of drivers, let i = index">
+      <div style="height: 2vw;"></div>
+    <div class="box">
+      <button type='button' (click)='delete(i)' class='delete has-background-danger'></button>
+      <h1>{{ driver.name }}</h1>
+      <p>Team: {{ driver.team }}</p>
+      <figure class="img">
+      <img src='{{ driver.img }}'>
+      </figure>
+      <button type='button' class='button is-link is-outlined' (click)='onEdit(i)'>Edit Driver</button>
+    </div>
+    <div style="height: 2vw;"></div>
+  </li>
+</ul>
+
+
+
+</div>

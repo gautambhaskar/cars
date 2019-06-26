@@ -1,0 +1,27 @@
+<div style="height: 30vh;">
+</div>
+<div class="container">
+  <div style='text-align: center;' *ngIf='isLoading'>
+    <app-spinner></app-spinner>
+  </div>
+  <div class="container" *ngIf='!isLoading'>
+    <div class="box">
+      <figure class='img'>
+          <img src='{{ imgsrc }}'>
+      </figure>
+    </div>
+    <form #f='ngForm' (ngSubmit)='onSubmit(f)'>
+      <p>
+        Name: <input [(ngModel)]='name' type='text' name='name' class='input' required>
+      </p>
+      <p>
+        Team: <input [(ngModel)]='team' type='text' name='team' class='input' required>
+      </p>
+      <p>
+        Image Source: <input [(ngModel)]='imgsrc' type='text' name='img' class='input'>
+      </p>
+      <div style='height: 5vh;'></div>
+      <button class='button is-info is-outlined' type='submit' [disabled]='!f.valid'>Edit</button>  
+    </form>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+    <h1 class='title is-1'>Cars</h1>
+    <ul>
+      
+        <li *ngFor='let car of cars, let i = index'>
+          <div (click) = 'switchCar(i)' class="tile box has-text-light">
+            <h2>{{ car.name }}</h2>
+          </div>
+          <div style='height: 5px; margin-top: -10px;'></div>
+        </li>
+    </ul>
+</div>
